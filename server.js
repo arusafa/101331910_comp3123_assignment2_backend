@@ -1,6 +1,6 @@
-import express, { json } from "express";
-import employeeRoutes from "./routes/employees";
-import { connect } from "mongoose";
+const employeeRoutes = require("./routes/employees")
+const mongoose = require("mongoose")
+const express = require("express");
 const app = express()
 const PORT = process.env.PORT || 8000;
 require("dotenv").config();
