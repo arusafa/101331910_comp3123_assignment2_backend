@@ -2,7 +2,7 @@ const employeeRoutes = require("./routes/employees")
 const mongoose = require("mongoose")
 const express = require("express");
 const app = express()
-const PORT = process.env.PORT || 8000;
+const SERVER_PORT = process.env.PORT || 8000;
 require("dotenv").config();
 const cors = require("cors");
 
@@ -33,7 +33,7 @@ import userRoutes from "./routes/users";
 app.use("/api/", userRoutes)
 
 app.listen(process.env.PORT || 8000, () => {
-    console.log(`Server running at http://localhost:${PORT}/`)
+    console.log(`Server running at http://localhost:${SERVER_PORT}/`)
     console.log("Press CTRL + C to stop server")
 });
 
