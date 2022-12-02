@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 app.use("/api/", employeeRoutes)
 
 //userRouter
-import userRoutes from "./routes/users";
+const userRoutes = require("./routes/users");
 //userAPI
 app.use("/api/", userRoutes)
 
