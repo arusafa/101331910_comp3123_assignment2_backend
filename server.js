@@ -1,15 +1,18 @@
+const express = require("express")
 const employeeRoutes = require("./routes/employees")
 const mongoose = require("mongoose")
-const express = require("express");
 const app = express()
 const SERVER_PORT = process.env.PORT || 8000;
-require("dotenv").config();
-const cors = require("cors");
+var cors = require("cors")
+require("dotenv").config()
 
-app.use(json())
+app.use(express.json())
+
 app.use(cors())
 
-connect("mongodb+srv://fall2022_comp3123:SAFA.aru1993@cluster0.lclqo7i.mongodb.net/comp3123_assignment2?retryWrites=true&w=majority", {
+
+
+mongoose.connect("mongodb+srv://fall2022_comp3123:SAFA.aru1993@cluster0.lclqo7i.mongodb.net/comp3123_assignment2?retryWrites=true&w=majority", {
 
 useNewUrlParser:true,
 useUnifiedTopology:true
@@ -17,18 +20,15 @@ useUnifiedTopology:true
 
 app.route("/hello")
     .get((req, res) => {
-    res.send("Hello World from Safa Aru on hello route")
-})
-
-app.get("/", (req, res) => {
     res.send("Hello World from Safa Aru")
 })
+
 
 //employeeAPI
 app.use("/api/", employeeRoutes)
 
 //userRouter
-const userRoutes = require("./routes/users");
+const userRoutes = require("./routes/users")
 //userAPI
 app.use("/api/", userRoutes)
 
