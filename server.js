@@ -17,6 +17,10 @@ useUnifiedTopology:true
 
 app.route("/hello")
     .get((req, res) => {
+    res.send("Hello World from Safa Aru on hello route")
+})
+
+app.get("/", (req, res) => {
     res.send("Hello World from Safa Aru")
 })
 
