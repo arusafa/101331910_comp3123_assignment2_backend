@@ -8,13 +8,7 @@ require("dotenv").config()
 
 app.use(express.json())
 
-app.use(cors(
-    {
-   headers: "Access-Control-Allow-Origin"
-    }
-))
-
-
+app.use(cors())
 
 mongoose.connect("mongodb+srv://fall2022_comp3123:SAFA.aru1993@cluster0.lclqo7i.mongodb.net/comp3123_assignment2?retryWrites=true&w=majority", {
 
